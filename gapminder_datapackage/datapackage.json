@@ -8,7 +8,9 @@
         "fields": [
           {
             "name": "country",
-            "type": "string"
+            "type": "string",
+            "title": "Name of Country",
+            "description": "A list of countries by name"
           },
           {
             "name": "continent",
