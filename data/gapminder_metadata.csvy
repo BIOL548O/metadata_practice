@@ -1,3 +1,31 @@
+---
+name: gapminder dataset
+fields:
+  - name: country
+    title: Name of Country
+    class: character
+    description: countries of the world
+  - name: continent
+    title: Name of continent
+    class: character
+    description: Continent name
+  - name: year
+    title: Year of observations
+    class: numeric
+    description 4-digit year
+  - name: lifeExp
+    title: Life Expectancy
+    class: numeric
+    description: Average(?) life expectancy
+  - name: pop
+    title: Population
+    class: numeric
+    description: Population data
+  - name: gdpPercap
+    title: Gross Domestic Product percapita
+    class: numeric
+    description: amount of money
+---
 country,continent,year,lifeExp,pop,gdpPercap
 Afghanistan,Asia,1952,28.801,8425333,779.4453145
 Afghanistan,Asia,1957,30.332,9240934,820.8530296
