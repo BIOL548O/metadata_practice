@@ -1,0 +1,42 @@
+[
+  {
+    "name": "gapminder_data",
+    "title": "the data from Gapminder",
+    "last_updated": "2016-02-25",
+    "version": "0.1",
+    "license": "GPL"
+  },
+  [
+    {
+      "path": "data/gapminder_data-data.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "country",
+            "type": "string"
+          },
+          {
+            "name": "continent",
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "type": "number"
+          },
+          {
+            "name": "lifeExp",
+            "type": "number"
+          },
+          {
+            "name": "pop",
+            "type": "number"
+          },
+          {
+            "name": "gdpPercap",
+            "type": "number"
+          }
+        ]
+      }
+    }
+  ]
+]
