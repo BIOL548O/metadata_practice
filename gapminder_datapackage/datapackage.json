@@ -1,0 +1,37 @@
+{
+  "name": "gapminder_datapackage",
+  "resources": [
+    {
+      "path": "data/The Gapminder Data.csv",
+      "name": "The Gapminder Data",
+      "schema": {
+        "fields": [
+          {
+            "name": "country",
+            "type": "string"
+          },
+          {
+            "name": "continent",
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "type": "integer"
+          },
+          {
+            "name": "lifeExp",
+            "type": "number"
+          },
+          {
+            "name": "pop",
+            "type": "integer"
+          },
+          {
+            "name": "gdpPercap",
+            "type": "number"
+          }
+        ]
+      }
+    }
+  ]
+}
