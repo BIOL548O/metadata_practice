@@ -3,7 +3,9 @@ library(dplyr)
 library(EML)
 library(gapminder)
 
-## could also be done:
+
+# attributes --------------------------------------------------------------
+
 attributes <- frame_data(
   ~attributeName, ~formatString,  ~definition       ,  ~unit, ~numberType, ~attributeDefinition,
   "country"     ,            NA,           "country",     NA,          NA,  "name of country",
@@ -14,12 +16,15 @@ attributes <- frame_data(
   "gdpPercap"   ,            NA,                  NA,     "number",   "real",  "GDP per capita"
 ) 
 
-## what units can we use? consult 
+## what units can we use? consult:
 # standardUnits <- get_unitList()
 # standardUnits$units
 # View(standardUnits$units)
 
-## now for the factors:
+
+# factors -----------------------------------------------------------------
+
+## there are no factors in this dataset, but this is where you would put them!
 
 attributeList <- set_attributes(as.data.frame(attributes), 
                                 col_classes = c("character", "character", 
@@ -28,7 +33,10 @@ attributeList <- set_attributes(as.data.frame(attributes),
 ## as many col_classes as there are rows in attributes
 ## note that you need to coerce attributes back to data.frame
 
-glimpse(attributes)
+
+# dataTable: putting it together ------------------------------------------
+
+
 
 readr::write_csv(gapminder, "data/gapminder.csv")
 physical <- set_physical("data/gapminder.csv")
@@ -39,8 +47,26 @@ dataTable <- new("dataTable",
                  physical = physical,
                  attributeList = attributeList)
 
+
+# person ------------------------------------------------------------------
+
+
+
 R_person <- as.person("John Doe <john.doe@gmail.com")
 ownername <-as(R_person, "creator")
+
+
+contact <- 
+  new("contact",
+      individualName = ownername@individualName,
+      electronicMail = ownername@electronicMailAddress,
+      # address =,
+      organizationName = "Gapminder",
+      phone = "000-000-0000")
+
+
+
+# coverage ----------------------------------------------------------------
 
 
 coverage <- 
@@ -51,13 +77,8 @@ coverage <-
                altitudeMin = 0, altitudeMaximum = 2000,
                altitudeUnits = "meter")
 
-contact <- 
-  new("contact",
-      individualName = ownername@individualName,
-      electronicMail = ownername@electronicMailAddress,
-      # address =,
-      organizationName = "Gapminder",
-      phone = "000-000-0000")
+
+# combining everything: dataset -------------------------------------------
 
 
 dataset <- new("dataset",
